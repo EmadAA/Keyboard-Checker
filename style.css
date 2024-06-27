@@ -7,8 +7,18 @@ body {
 h1 {
   text-align: center;
 }
+.socialMedia {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.socialMedia i {
+  font-size: 25px;
+  margin: 10px;
+}
 .keyboard {
   max-width: 1080px;
+  margin-top: 20px;
   padding: 20px;
   position: absolute;
   top: 50%;
