@@ -106,8 +106,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const on = !!document.fullscreenElement;
     fullscreenBtn.style.display = on ? "none" : "block";
     exitFullscreenBtn.style.display = on ? "block" : "none";
-    // Chrome/Edge only: in fullscreen, ask the browser to capture system keys
-    // (Win key, F11, etc.) so they reach the page instead of the OS. Best effort.
+
+    
     if (navigator.keyboard) {
       if (on && navigator.keyboard.lock)
         navigator.keyboard.lock().catch(() => {});
