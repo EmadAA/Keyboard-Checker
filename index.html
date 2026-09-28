@@ -5,45 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Online Keyboard Tester - Check Every Key (Windows & Mac)</title>
-    <meta
-      name="description"
-      content="Free online keyboard tester. Press any key to see if it works. Supports full 104-key Windows and Mac layouts, function keys, PrtSc, numpad and multiple key presses."
-    />
-    <link rel="canonical" href="https://emadaa.github.io/Keyboard-Checker/" />
-    <meta name="robots" content="index, follow" />
-
-    <!-- Search Console verification (you get this value in step 4) -->
-    <meta name="google-site-verification" content=" google03edb38cf3a46ab2.html" />
-
-    <!-- Social sharing -->
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="Online Keyboard Tester - Check Every Key"
-    />
-    <meta
-      property="og:description"
-      content="Test every key on your Windows or Mac keyboard online, its completely free to use."
-    />
-    <meta property="og:url" content="https://emadaa.github.io/Keyboard-Checker/" />
-    <meta property="og:image" content="https://emadaa.github.io/Keyboard-Checker/preview.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-
-    <link rel="icon" href="favicon.ico" />
-
-    <!-- Structured data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Online Keyboard Tester",
-        "url": "https://emadaa.github.io/Keyboard-Checker/",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Any (browser-based)",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "author": { "@type": "Person", "name": "Emad Uddin Adil" }
-      }
-    </script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -222,7 +183,10 @@
 
       <!-- NUMPAD BLOCK -->
       <div class="section numpad">
-        <div class="row fnrow"></div>
+        <div class="row fnrow">
+          <div class="author-credit">Author: Emad Uddin Adil</div>
+        </div>
+
         <div class="numgrid">
           <div class="key extra" data-code="NumLock">Num</div>
           <div class="key extra" data-code="NumpadDivide">/</div>
@@ -377,6 +341,22 @@
         </div>
       </div>
     </div>
+    <div class="fn-notice">
+  <div class="fn-notice-icon">
+    <i class="fa-solid fa-circle-info"></i>
+  </div>
+
+  <div class="fn-notice-content">
+    <strong>Why isn't the Fn key detected?</strong>
+
+    <p>
+      The Fn key isn't broken. It's faded on purpose, and no web page can detect it.
+      On almost every keyboard, Fn is handled by the keyboard's own chip and never
+      sent to the computer as a key. It only changes what other keys send.
+      Pressing Fn alone produces no signal, so the browser has nothing to react to.
+    </p>
+  </div>
+</div>
 
     <script src="script.js"></script>
   </body>
