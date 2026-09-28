@@ -78,6 +78,18 @@ header button {
   grid-auto-rows: var(--u);
   gap: var(--gap);
 }
+.author-credit {
+  width: calc(4 * (var(--u) + var(--gap)) - var(--gap));
+  height: var(--u);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  color: #d5f0d9;
+  font-size: calc(var(--u) * 0.35);
+  font-weight: 500;
+  white-space: nowrap;
+}
 .numgrid .key { width: auto; height: auto; }
 .numgrid .tall { grid-row: span 2; }
 .numgrid .wide0 { grid-column: span 2; }
@@ -108,3 +120,44 @@ header button {
 .arrows > .key { --w: 1; }
 .updown { display: flex; flex-direction: column; gap: var(--gap); }
 .updown .key.half { height: calc((var(--u) - var(--gap)) / 2); }
+.fn-notice {
+  max-width: 850px;
+  margin: 25px auto 0;
+  padding: 16px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  box-sizing: border-box;
+
+  background: #eef4f3;
+  border: 1px solid #b8c8c5;
+  border-left: 4px solid red;
+  border-radius: 8px;
+
+  color: #27272c;
+  text-align: left;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.fn-notice-icon {
+  flex: 0 0 auto;
+  font-size: 20px;
+  margin-top: 2px;
+  color: #52555b;
+}
+
+.fn-notice-content {
+  flex: 1;
+}
+
+.fn-notice-content strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.fn-notice-content p {
+  margin: 0;
+}
