@@ -1,10 +1,49 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Keyboard Checker</title>
+    <title>Online Keyboard Tester - Check Every Key (Windows & Mac)</title>
+    <meta
+      name="description"
+      content="Free online keyboard tester. Press any key to see if it works. Supports full 104-key Windows and Mac layouts, function keys, PrtSc, numpad and multiple key presses."
+    />
+    <link rel="canonical" href="https://emadaa.github.io/Keyboard-Checker/" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Search Console verification (you get this value in step 4) -->
+    <meta name="google-site-verification" content="google03edb38cf3a46ab2" />
+
+    <!-- Social sharing -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Online Keyboard Tester - Check Every Key"
+    />
+    <meta
+      property="og:description"
+      content="Test every key on your Windows or Mac keyboard online, its completely free to use."
+    />
+    <meta property="og:url" content="https://emadaa.github.io/Keyboard-Checker/" />
+    <meta property="og:image" content="https://emadaa.github.io/Keyboard-Checker/preview.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="favicon.ico" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Online Keyboard Tester",
+        "url": "https://emadaa.github.io/Keyboard-Checker/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any (browser-based)",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "author": { "@type": "Person", "name": "Emad Uddin Adil" }
+      }
+    </script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -13,89 +52,330 @@
   </head>
   <body>
     <header>
-      <h1>Check Your Keyboard's Key !</h1>
+      <h1>Online Keyboard Tester</h1>
       <div class="button-container">
         <button id="fullscreenBtn">Go Fullscreen</button>
-        <button id="exitFullscreenBtn" style="display: none;">Exit Fullscreen</button>
-    
-
+        <button id="exitFullscreenBtn" style="display: none">
+          Exit Fullscreen
+        </button>
+        <button id="resetBtn">Reset</button>
+      </div>
+      <div class="os-tabs">
+        <button class="os-btn active" data-os="windows">Windows</button>
+        <button class="os-btn" data-os="mac">Mac</button>
+      </div>
+      <p class="counter">
+        Keys tested: <span id="count">0</span> / <span id="total">0</span>
+      </p>
       <div class="socialMedia">
         <a target="_blank" href="https://www.facebook.com/emad.adil.509"
           ><i class="fa-brands fa-facebook"></i
         ></a>
-        <a target="_blank" href="https://instagram.com/emad_uddin_adil/">
-          <i class="fa-brands fa-instagram"></i
+        <a target="_blank" href="https://instagram.com/emad_uddin_adil/"
+          ><i class="fa-brands fa-instagram"></i
         ></a>
         <a
           target="_blank"
           href="https://www.linkedin.com/in/emad-uddin-adil-430851214/"
-        >
-          <i class="fa-brands fa-linkedin"></i
+          ><i class="fa-brands fa-linkedin"></i
         ></a>
       </div>
     </header>
 
-    <div class="keyboard">
-      <div class="key extra">~</div>
-      <div class="key">1</div>
-      <div class="key">2</div>
-      <div class="key">3</div>
-      <div class="key">4</div>
-      <div class="key">5</div>
-      <div class="key">6</div>
-      <div class="key">7</div>
-      <div class="key">8</div>
-      <div class="key">9</div>
-      <div class="key">0</div>
-      <div class="key">-</div>
-      <div class="key">=</div>
-      <div class="key extra backspace">Backspace</div>
-      <div class="key extra tab">Tab</div>
-      <div class="key">Q</div>
-      <div class="key">W</div>
-      <div class="key">E</div>
-      <div class="key">R</div>
-      <div class="key">T</div>
-      <div class="key">Y</div>
-      <div class="key">U</div>
-      <div class="key">I</div>
-      <div class="key">O</div>
-      <div class="key">P</div>
-      <div class="key">[</div>
-      <div class="key">]</div>
-      <div class="key backslash">\</div>
-      <div class="key extra capslock">CapsLock</div>
-      <div class="key">A</div>
-      <div class="key">S</div>
-      <div class="key">D</div>
-      <div class="key">F</div>
-      <div class="key">G</div>
-      <div class="key">H</div>
-      <div class="key">J</div>
-      <div class="key">K</div>
-      <div class="key">L</div>
-      <div class="key">;</div>
-      <div class="key">'</div>
-      <div class="key extra enter">Enter</div>
-      <div class="key extra lshift">Shift</div>
-      <div class="key">Z</div>
-      <div class="key">X</div>
-      <div class="key">C</div>
-      <div class="key">V</div>
-      <div class="key">B</div>
-      <div class="key">N</div>
-      <div class="key">M</div>
-      <div class="key">,</div>
-      <div class="key">.</div>
-      <div class="key">/</div>
-      <div class="key extra rshift">Shift</div>
-      <div class="key extra lctrl">Ctrl</div>
-      <div class="key extra lalt">Alt</div>
-      <div class="key extra win"><i class="fa-brands fa-windows"></i></div>
-      <div class="key space">Space</div>
-      <div class="key extra win"><i class="fa-brands fa-windows"></i></div>
-      <div class="key extra ralt">Alt</div>
-      <div class="key extra rctrl">Ctrl</div>
+    <div class="keyboard" id="kb-windows">
+      <!-- MAIN BLOCK -->
+      <div class="section main">
+        <div class="row fnrow">
+          <div class="key extra" data-code="Escape">Esc</div>
+          <div class="key gap" style="--w: 1"></div>
+          <div class="key fn" data-code="F1">F1</div>
+          <div class="key fn" data-code="F2">F2</div>
+          <div class="key fn" data-code="F3">F3</div>
+          <div class="key fn" data-code="F4">F4</div>
+          <div class="key gap" style="--w: 0.5"></div>
+          <div class="key fn" data-code="F5">F5</div>
+          <div class="key fn" data-code="F6">F6</div>
+          <div class="key fn" data-code="F7">F7</div>
+          <div class="key fn" data-code="F8">F8</div>
+          <div class="key gap" style="--w: 0.5"></div>
+          <div class="key fn" data-code="F9">F9</div>
+          <div class="key fn" data-code="F10">F10</div>
+          <div class="key fn" data-code="F11">F11</div>
+          <div class="key fn" data-code="F12">F12</div>
+        </div>
+        <div class="row">
+          <div class="key" data-code="Backquote">~</div>
+          <div class="key" data-code="Digit1">1</div>
+          <div class="key" data-code="Digit2">2</div>
+          <div class="key" data-code="Digit3">3</div>
+          <div class="key" data-code="Digit4">4</div>
+          <div class="key" data-code="Digit5">5</div>
+          <div class="key" data-code="Digit6">6</div>
+          <div class="key" data-code="Digit7">7</div>
+          <div class="key" data-code="Digit8">8</div>
+          <div class="key" data-code="Digit9">9</div>
+          <div class="key" data-code="Digit0">0</div>
+          <div class="key" data-code="Minus">-</div>
+          <div class="key" data-code="Equal">=</div>
+          <div class="key extra backspace" data-code="Backspace">Backspace</div>
+        </div>
+        <div class="row">
+          <div class="key extra tab" data-code="Tab">Tab</div>
+          <div class="key" data-code="KeyQ">Q</div>
+          <div class="key" data-code="KeyW">W</div>
+          <div class="key" data-code="KeyE">E</div>
+          <div class="key" data-code="KeyR">R</div>
+          <div class="key" data-code="KeyT">T</div>
+          <div class="key" data-code="KeyY">Y</div>
+          <div class="key" data-code="KeyU">U</div>
+          <div class="key" data-code="KeyI">I</div>
+          <div class="key" data-code="KeyO">O</div>
+          <div class="key" data-code="KeyP">P</div>
+          <div class="key" data-code="BracketLeft">[</div>
+          <div class="key" data-code="BracketRight">]</div>
+          <div class="key backslash" data-code="Backslash">\</div>
+        </div>
+        <div class="row">
+          <div class="key extra capslock" data-code="CapsLock">CapsLock</div>
+          <div class="key" data-code="KeyA">A</div>
+          <div class="key" data-code="KeyS">S</div>
+          <div class="key" data-code="KeyD">D</div>
+          <div class="key" data-code="KeyF">F</div>
+          <div class="key" data-code="KeyG">G</div>
+          <div class="key" data-code="KeyH">H</div>
+          <div class="key" data-code="KeyJ">J</div>
+          <div class="key" data-code="KeyK">K</div>
+          <div class="key" data-code="KeyL">L</div>
+          <div class="key" data-code="Semicolon">;</div>
+          <div class="key" data-code="Quote">'</div>
+          <div class="key extra enter" data-code="Enter">Enter</div>
+        </div>
+        <div class="row">
+          <div class="key extra lshift" data-code="ShiftLeft">Shift</div>
+          <div class="key" data-code="KeyZ">Z</div>
+          <div class="key" data-code="KeyX">X</div>
+          <div class="key" data-code="KeyC">C</div>
+          <div class="key" data-code="KeyV">V</div>
+          <div class="key" data-code="KeyB">B</div>
+          <div class="key" data-code="KeyN">N</div>
+          <div class="key" data-code="KeyM">M</div>
+          <div class="key" data-code="Comma">,</div>
+          <div class="key" data-code="Period">.</div>
+          <div class="key" data-code="Slash">/</div>
+          <div class="key extra rshift" data-code="ShiftRight">Shift</div>
+        </div>
+        <div class="row">
+          <div class="key extra mod" data-code="ControlLeft">Ctrl</div>
+          <div class="key extra mod" data-code="MetaLeft">
+            <i class="fa-brands fa-windows"></i>
+          </div>
+          <div class="key extra mod" data-code="AltLeft">Alt</div>
+          <div class="key space" data-code="Space">Space</div>
+          <div class="key extra mod" data-code="AltRight">Alt</div>
+          <div
+            class="key extra mod nocheck"
+            title="Fn cannot be detected by browsers"
+          >
+            Fn
+          </div>
+          <div class="key extra mod" data-code="ControlRight">Ctrl</div>
+        </div>
+      </div>
+
+      <!-- NAVIGATION BLOCK -->
+      <div class="section nav">
+        <div class="row fnrow">
+          <div class="key fn" data-code="PrintScreen">PrtSc</div>
+          <div class="key fn" data-code="ScrollLock">ScrLk</div>
+          <div class="key fn" data-code="Pause">Pause</div>
+        </div>
+        <div class="row">
+          <div class="key extra" data-code="Insert">Ins</div>
+          <div class="key extra" data-code="Home">Home</div>
+          <div class="key extra" data-code="PageUp">PgUp</div>
+        </div>
+        <div class="row">
+          <div class="key extra" data-code="Delete">Del</div>
+          <div class="key extra" data-code="End">End</div>
+          <div class="key extra" data-code="PageDown">PgDn</div>
+        </div>
+        <div class="row blank"></div>
+        <div class="row">
+          <div class="key gap"></div>
+          <div class="key extra" data-code="ArrowUp">
+            <i class="fa-solid fa-arrow-up"></i>
+          </div>
+          <div class="key gap"></div>
+        </div>
+        <div class="row">
+          <div class="key extra" data-code="ArrowLeft">
+            <i class="fa-solid fa-arrow-left"></i>
+          </div>
+          <div class="key extra" data-code="ArrowDown">
+            <i class="fa-solid fa-arrow-down"></i>
+          </div>
+          <div class="key extra" data-code="ArrowRight">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- NUMPAD BLOCK -->
+      <div class="section numpad">
+        <div class="row fnrow"></div>
+        <div class="numgrid">
+          <div class="key extra" data-code="NumLock">Num</div>
+          <div class="key extra" data-code="NumpadDivide">/</div>
+          <div class="key extra" data-code="NumpadMultiply">*</div>
+          <div class="key extra" data-code="NumpadSubtract">-</div>
+          <div class="key" data-code="Numpad7">7</div>
+          <div class="key" data-code="Numpad8">8</div>
+          <div class="key" data-code="Numpad9">9</div>
+          <div class="key extra tall" data-code="NumpadAdd">+</div>
+          <div class="key" data-code="Numpad4">4</div>
+          <div class="key" data-code="Numpad5">5</div>
+          <div class="key" data-code="Numpad6">6</div>
+          <div class="key" data-code="Numpad1">1</div>
+          <div class="key" data-code="Numpad2">2</div>
+          <div class="key" data-code="Numpad3">3</div>
+          <div class="key extra tall" data-code="NumpadEnter">Enter</div>
+          <div class="key wide0" data-code="Numpad0">0</div>
+          <div class="key" data-code="NumpadDecimal">.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="keyboard hidden" id="kb-mac">
+      <div class="section main">
+        <div class="row fnrow">
+          <div class="key extra" data-code="Escape" style="--w: 1.5">esc</div>
+          <div class="key fn" data-code="F1" style="--w: 1">F1</div>
+          <div class="key fn" data-code="F2" style="--w: 1">F2</div>
+          <div class="key fn" data-code="F3" style="--w: 1">F3</div>
+          <div class="key fn" data-code="F4" style="--w: 1">F4</div>
+          <div class="key fn" data-code="F5" style="--w: 1">F5</div>
+          <div class="key fn" data-code="F6" style="--w: 1">F6</div>
+          <div class="key fn" data-code="F7" style="--w: 1">F7</div>
+          <div class="key fn" data-code="F8" style="--w: 1">F8</div>
+          <div class="key fn" data-code="F9" style="--w: 1">F9</div>
+          <div class="key fn" data-code="F10" style="--w: 1">F10</div>
+          <div class="key fn" data-code="F11" style="--w: 1">F11</div>
+          <div class="key fn" data-code="F12" style="--w: 1">F12</div>
+          <div class="key gap" style="--w: 1.5"></div>
+        </div>
+        <div class="row">
+          <div class="key" data-code="Backquote" style="--w: 1">`</div>
+          <div class="key" data-code="Digit1" style="--w: 1">1</div>
+          <div class="key" data-code="Digit2" style="--w: 1">2</div>
+          <div class="key" data-code="Digit3" style="--w: 1">3</div>
+          <div class="key" data-code="Digit4" style="--w: 1">4</div>
+          <div class="key" data-code="Digit5" style="--w: 1">5</div>
+          <div class="key" data-code="Digit6" style="--w: 1">6</div>
+          <div class="key" data-code="Digit7" style="--w: 1">7</div>
+          <div class="key" data-code="Digit8" style="--w: 1">8</div>
+          <div class="key" data-code="Digit9" style="--w: 1">9</div>
+          <div class="key" data-code="Digit0" style="--w: 1">0</div>
+          <div class="key" data-code="Minus" style="--w: 1">-</div>
+          <div class="key" data-code="Equal" style="--w: 1">=</div>
+          <div class="key extra" data-code="Backspace" style="--w: 2">
+            delete
+          </div>
+        </div>
+        <div class="row">
+          <div class="key extra" data-code="Tab" style="--w: 1.5">tab</div>
+          <div class="key" data-code="KeyQ" style="--w: 1">Q</div>
+          <div class="key" data-code="KeyW" style="--w: 1">W</div>
+          <div class="key" data-code="KeyE" style="--w: 1">E</div>
+          <div class="key" data-code="KeyR" style="--w: 1">R</div>
+          <div class="key" data-code="KeyT" style="--w: 1">T</div>
+          <div class="key" data-code="KeyY" style="--w: 1">Y</div>
+          <div class="key" data-code="KeyU" style="--w: 1">U</div>
+          <div class="key" data-code="KeyI" style="--w: 1">I</div>
+          <div class="key" data-code="KeyO" style="--w: 1">O</div>
+          <div class="key" data-code="KeyP" style="--w: 1">P</div>
+          <div class="key" data-code="BracketLeft" style="--w: 1">[</div>
+          <div class="key" data-code="BracketRight" style="--w: 1">]</div>
+          <div class="key" data-code="Backslash" style="--w: 1.5">\</div>
+        </div>
+        <div class="row">
+          <div class="key extra" data-code="CapsLock" style="--w: 1.75">
+            caps lock
+          </div>
+          <div class="key" data-code="KeyA" style="--w: 1">A</div>
+          <div class="key" data-code="KeyS" style="--w: 1">S</div>
+          <div class="key" data-code="KeyD" style="--w: 1">D</div>
+          <div class="key" data-code="KeyF" style="--w: 1">F</div>
+          <div class="key" data-code="KeyG" style="--w: 1">G</div>
+          <div class="key" data-code="KeyH" style="--w: 1">H</div>
+          <div class="key" data-code="KeyJ" style="--w: 1">J</div>
+          <div class="key" data-code="KeyK" style="--w: 1">K</div>
+          <div class="key" data-code="KeyL" style="--w: 1">L</div>
+          <div class="key" data-code="Semicolon" style="--w: 1">;</div>
+          <div class="key" data-code="Quote" style="--w: 1">'</div>
+          <div class="key extra" data-code="Enter" style="--w: 2.25">
+            return
+          </div>
+        </div>
+        <div class="row">
+          <div class="key extra" data-code="ShiftLeft" style="--w: 2.25">
+            shift
+          </div>
+          <div class="key" data-code="KeyZ" style="--w: 1">Z</div>
+          <div class="key" data-code="KeyX" style="--w: 1">X</div>
+          <div class="key" data-code="KeyC" style="--w: 1">C</div>
+          <div class="key" data-code="KeyV" style="--w: 1">V</div>
+          <div class="key" data-code="KeyB" style="--w: 1">B</div>
+          <div class="key" data-code="KeyN" style="--w: 1">N</div>
+          <div class="key" data-code="KeyM" style="--w: 1">M</div>
+          <div class="key" data-code="Comma" style="--w: 1">,</div>
+          <div class="key" data-code="Period" style="--w: 1">.</div>
+          <div class="key" data-code="Slash" style="--w: 1">/</div>
+          <div class="key extra" data-code="ShiftRight" style="--w: 2.75">
+            shift
+          </div>
+        </div>
+        <div class="row">
+          <div
+            class="key extra nocheck"
+            style="--w: 1"
+            title="Fn cannot be detected by browsers"
+          >
+            fn
+          </div>
+          <div class="key extra" data-code="ControlLeft" style="--w: 1">
+            <b>⌃</b><small>control</small>
+          </div>
+          <div class="key extra" data-code="AltLeft" style="--w: 1">
+            <b>⌥</b><small>option</small>
+          </div>
+          <div class="key extra" data-code="MetaLeft" style="--w: 1.25">
+            <b>⌘</b><small>command</small>
+          </div>
+          <div class="key" data-code="Space" style="--w: 5.5"></div>
+          <div class="key extra" data-code="MetaRight" style="--w: 1.25">
+            <b>⌘</b><small>command</small>
+          </div>
+          <div class="key extra" data-code="AltRight" style="--w: 1">
+            <b>⌥</b><small>option</small>
+          </div>
+          <div class="arrows">
+            <div class="key extra" data-code="ArrowLeft" style="--w: 1">
+              <i class="fa-solid fa-arrow-left"></i>
+            </div>
+            <div class="updown">
+              <div class="key extra half" data-code="ArrowUp" style="--w: 1">
+                <i class="fa-solid fa-arrow-up"></i>
+              </div>
+              <div class="key extra half" data-code="ArrowDown" style="--w: 1">
+                <i class="fa-solid fa-arrow-down"></i>
+              </div>
+            </div>
+            <div class="key extra" data-code="ArrowRight" style="--w: 1">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="script.js"></script>
